@@ -10,20 +10,20 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ItemController {
     private final ItemService itemService;
-
+    private final String requestHeaderUserId = "X-Later-User-Id";
     @GetMapping
-    public List<Item> get(@RequestHeader("X-Later-User-Id") long userId) {
+    public List<Item> get(@RequestHeader(requestHeaderUserId) long userId) {
         return itemService.getItems(userId);
     }
 
     @PostMapping
-    public Item add(@RequestHeader("X-Later-User-Id") Long userId,
+    public Item add(@RequestHeader(requestHeaderUserId) Long userId,
                     @RequestBody Item item) {
         return itemService.addNewItem(userId, item);
     }
 
     @DeleteMapping("/{itemId}")
-    public void deleteItem(@RequestHeader("X-Later-User-Id") long userId,
+    public void deleteItem(@RequestHeader(requestHeaderUserId) long userId,
                            @PathVariable long itemId) {
         itemService.deleteItem(userId, itemId);
     }
