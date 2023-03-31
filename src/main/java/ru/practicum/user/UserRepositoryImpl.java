@@ -8,6 +8,7 @@ import java.util.List;
 @Component
 public class UserRepositoryImpl implements UserRepository {
     private final List<User> users = new ArrayList<>();
+
     @Override
     public List<User> findAll() {
         return users;

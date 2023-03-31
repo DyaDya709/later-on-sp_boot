@@ -1,15 +1,21 @@
 package ru.practicum.user;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.Instant;
+import java.util.Objects;
 
-@Data
+@Builder
 @Entity
 @Table(name = "users")
+@Getter @Setter @ToString
 public class User {
+    public User() {
+    }
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "first_name", nullable = false)
@@ -26,7 +32,16 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserState state;
 
-    private enum UserState {
-        ACTIVE, BLOCKED, DELETED;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id != null && Objects.equals(id, user.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
     }
 }
