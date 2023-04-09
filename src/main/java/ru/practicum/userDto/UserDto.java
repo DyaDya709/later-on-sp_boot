@@ -2,6 +2,7 @@ package ru.practicum.userDto;
 
 import lombok.Builder;
 import lombok.Data;
+import ru.practicum.user.User;
 import ru.practicum.user.UserState;
 
 @Data

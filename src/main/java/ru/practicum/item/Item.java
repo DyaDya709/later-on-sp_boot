@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Builder
 @Entity
-@Table(name = "items")
+@Table(name = "items",schema = "public")
 @Getter @Setter @ToString
 public class Item {
     public Item() {

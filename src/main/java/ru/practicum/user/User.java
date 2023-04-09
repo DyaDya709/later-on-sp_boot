@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @Builder
 @Entity
-@Table(name = "users")
+@Table(name = "users",schema = "public")
 @Getter @Setter @ToString
 public class User {
     public User() {
