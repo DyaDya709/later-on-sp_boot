@@ -3,7 +3,7 @@ drop table if exists item_notes;
 drop table if exists items;
 drop table if exists users;
 
-create table users
+create table if not exists users
 (
     id                bigint generated always as identity
         primary key,
@@ -17,7 +17,7 @@ create table users
 alter table users
     owner to root;
 
-create table items
+create table if not exists items
 (
     id      bigint generated always as identity
         primary key,
@@ -30,7 +30,7 @@ create table items
 alter table items
     owner to root;
 
-create table tags
+create table if not exists tags
 (
     id      bigint generated always as identity,
     name    varchar(50),
@@ -42,10 +42,10 @@ create table tags
 alter table tags
     owner to root;
 
-create table item_notes
+create table if not exists item_notes
 (
-    id         bigserial
-        primary key,
+    id         bigint
+        generated always as identity,
     note       varchar(2000),
     created_at timestamp,
     item_id    bigint not null

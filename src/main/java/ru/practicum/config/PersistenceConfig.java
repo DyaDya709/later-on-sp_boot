@@ -12,6 +12,8 @@ import javax.persistence.EntityManagerFactory;
 @EnableTransactionManagement // включает управление транзакциями и обработку соответствующих аннотаций
 @EnableJpaRepositories(basePackages = "ru.practicum")
 public class PersistenceConfig {
+
+    //Мне кажется, что создавать бин через метод не нужно, так как он создается аннотацией EnableTransactionManagement
     @Bean
     public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
         JpaTransactionManager transactionManager = new JpaTransactionManager();

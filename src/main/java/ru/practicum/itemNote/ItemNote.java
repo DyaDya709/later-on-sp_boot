@@ -19,13 +19,13 @@ public class ItemNote {
     private Long id;
 
     @Column(name = "created_at")
-    Instant instant;
+    Instant dateOfNote;
 
     @Column(name = "note", length = 2000)
     private String note;
 
-    @ManyToOne
-    @JoinColumn(name = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "item_id")
     private Item item;
 
     @Override

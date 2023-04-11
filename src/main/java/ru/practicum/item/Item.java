@@ -3,6 +3,7 @@ package ru.practicum.item;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -23,7 +24,7 @@ public class Item {
 
     private String url;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.LAZY) //по умолчанию и так lazy
     @CollectionTable(name = "tags", joinColumns = @JoinColumn(name = "item_id"))
     @Column(name = "name")
     private Set<String> tags = new HashSet<>();

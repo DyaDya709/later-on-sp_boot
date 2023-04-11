@@ -3,6 +3,7 @@ package ru.practicum.tag;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 
