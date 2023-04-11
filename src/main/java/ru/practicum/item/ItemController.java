@@ -11,6 +11,7 @@ import java.util.List;
 public class ItemController {
     private final ItemService itemService;
     private final String requestHeaderUserId = "X-Later-User-Id";
+
     @GetMapping
     public List<Item> get(@RequestHeader(requestHeaderUserId) long userId) {
         return itemService.getItems(userId);

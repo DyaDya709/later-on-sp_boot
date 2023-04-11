@@ -17,7 +17,7 @@ public class ItemRepositoryImpl implements ItemRepository {
     public Item save(Item item) {
         item.setId(getId());
         items.compute(item.getUserId(), (userId, userItems) -> {
-            if(userItems == null) {
+            if (userItems == null) {
                 userItems = new ArrayList<>();
             }
             userItems.add(item);
@@ -29,7 +29,7 @@ public class ItemRepositoryImpl implements ItemRepository {
 
     @Override
     public void deleteByUserIdAndItemId(long userId, long itemId) {
-        if(items.containsKey(userId)) {
+        if (items.containsKey(userId)) {
             List<Item> userItems = items.get(userId);
             userItems.removeIf(item -> item.getId().equals(itemId));
         }

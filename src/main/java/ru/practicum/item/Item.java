@@ -1,19 +1,19 @@
 package ru.practicum.item;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Builder
 @Entity
-@Table(name = "items",schema = "public")
-@Getter @Setter @ToString
+@Table(name = "items", schema = "public")
+@Getter
+@Setter
+@ToString
 public class Item {
-    public Item() {
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,8 +24,8 @@ public class Item {
     private String url;
 
     @ElementCollection
-    @CollectionTable(name="tags", joinColumns=@JoinColumn(name="item_id"))
-    @Column(name="name")
+    @CollectionTable(name = "tags", joinColumns = @JoinColumn(name = "item_id"))
+    @Column(name = "name")
     private Set<String> tags = new HashSet<>();
 
     @Override

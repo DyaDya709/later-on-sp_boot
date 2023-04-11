@@ -1,12 +1,16 @@
 package ru.practicum.tag;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
-@Data
 @Entity
-@Table(name = "tags",schema = "public")
+@Table(name = "tags", schema = "public")
+@Getter
+@Setter
+@ToString
 public class Tag {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,4 +21,16 @@ public class Tag {
 
     @Column(name = "item_id")
     private Long itemId;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Tag)) return false;
+        return id != null && id.equals(((Tag) o).getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

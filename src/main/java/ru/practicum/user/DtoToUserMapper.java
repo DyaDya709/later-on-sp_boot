@@ -14,14 +14,7 @@ public class DtoToUserMapper implements Function<UserDto, User> {
 
     @Override
     public User apply(UserDto userDto) {
-        return User.builder()
-                .id(userDto.getId())
-                .firstName(userDto.getFirstName())
-                .lastName(userDto.getLastName())
-                .email(userDto.getEmail())
-                .registrationDate(stringDateTimeToInstantFormatter(userDto.getRegistrationDate()))
-                .state(userDto.getState())
-                .build();
+        return null;
     }
 
     private Instant stringDateTimeToInstantFormatter(String stringDateTime) {
