@@ -11,6 +11,7 @@ import ru.practicum.LaterApplication;
 import java.util.List;
 
 @SpringBootTest(
+        properties = "spring.config.location=classpath:application.properties",
         classes = {LaterApplication.class},
         webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
