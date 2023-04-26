@@ -14,10 +14,6 @@ import java.util.Set;
 public class LaterApplication {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext applicationContext = SpringApplication.run(LaterApplication.class, args);
-        ItemNoteService itemNoteService = applicationContext.getBean(ItemNoteService.class);
-        List<ItemNote> notes = itemNoteService.findAllByItemTagsIs("ya",1L);
-        List<ItemNote> notes1 = itemNoteService.findAllByNoteLike("some note1");
-        Set<String> tags = notes1.get(0).getItem().getTags();
+        SpringApplication.run(LaterApplication.class, args);
     }
 }
