@@ -14,8 +14,6 @@ create table if not exists users
     registration_date timestamp
 );
 
-alter table users
-    owner to root;
 
 create table if not exists items
 (
@@ -26,9 +24,6 @@ create table if not exists items
             references users,
     url     varchar(255)
 );
-
-alter table items
-    owner to root;
 
 create table if not exists tags
 (
@@ -41,8 +36,6 @@ create table if not exists tags
             references items
 );
 
-alter table tags
-    owner to root;
 
 create table if not exists item_notes
 (
@@ -56,5 +49,3 @@ create table if not exists item_notes
             references items
 );
 
-alter table item_notes
-    owner to root;
