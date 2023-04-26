@@ -1,7 +1,7 @@
 package ru.practicum.user;
 
 import lombok.RequiredArgsConstructor;
-import org.hamcrest.MatcherAssert;
+import static org.hamcrest.MatcherAssert.assertThat;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class UserServiceImplTest {
         List<User> users = userService.getAllUsers();
         User user = new User();
         user.setId(1L);
-        MatcherAssert.assertThat(users.get(0), Matchers.equalTo(user));
+        assertThat(users.get(0), Matchers.equalTo(user));
     }
 
 }
