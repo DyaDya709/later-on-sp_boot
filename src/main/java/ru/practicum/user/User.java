@@ -29,6 +29,7 @@ public class User {
     private Instant registrationDate;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "state")
     private UserState state;
 
     @Override

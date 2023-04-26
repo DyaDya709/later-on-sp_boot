@@ -1,7 +1,7 @@
 insert into users(first_name, email, last_name, state, registration_date)
-VALUES ('admin1', 'admin1@admin', 'lastname admin1','active',now()),
-       ('admin2', '2@admin', 'lastname admin2','active',now()),
-       ('admin3', '3@admin', 'lastname admin3','active',now());
+VALUES ('admin1', 'admin1@admin', 'lastname admin1','ACTIVE',now()),
+       ('admin2', '2@admin', 'lastname admin2','ACTIVE',now()),
+       ('admin3', '3@admin', 'lastname admin3','ACTIVE',now());
 
 insert into items(user_id, url)
 VALUES (1, 'http://ya.ru'),

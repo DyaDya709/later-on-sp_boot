@@ -12,7 +12,6 @@ import java.util.List;
 
 @SpringBootTest(
         classes = {LaterApplication.class},
-        properties = "db.name=test",
         webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class UserServiceImplTest {
