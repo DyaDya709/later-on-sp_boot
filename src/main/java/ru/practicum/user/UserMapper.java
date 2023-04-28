@@ -9,15 +9,15 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.function.Function;
 
-public class DtoToUserMapper implements Function<UserDto, User> {
-    private static final String PATTERN_FORMAT = "dd.MM.yyyy, hh:mm:ss";
+public class UserMapper implements Function<UserDto, User> {
+    private static final String PATTERN_FORMAT = "dd.MM.yyyy HH:mm:ss";
 
     @Override
     public User apply(UserDto userDto) {
         return null;
     }
 
-    private Instant stringDateTimeToInstantFormatter(String stringDateTime) {
+    public Instant stringDateTimeToInstantFormatter(String stringDateTime) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(PATTERN_FORMAT)
                 .withZone(ZoneId.systemDefault());
         LocalDateTime localDateTime = LocalDateTime.parse(stringDateTime, dateTimeFormatter);

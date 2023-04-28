@@ -1,7 +1,7 @@
 package ru.practicum.itemNote;
 
-import lombok.NoArgsConstructor;
 import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -20,6 +20,7 @@ public class ItemNoteMapper {
         itemNote.setId(itemNoteDto.getId());
         return itemNote;
     }
+
     private Instant stringDateTimeToInstantFormatter(String stringDateTime) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(PATTERN_FORMAT)
                 .withZone(ZoneId.systemDefault());

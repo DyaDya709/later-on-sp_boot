@@ -17,6 +17,7 @@ public class UserController {
     }
 
     @PostMapping
+    //@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR) для теста saveUser в UserControllerTest
     public User saveNewUser(@RequestBody User user) {
         return userService.saveUser(user);
     }

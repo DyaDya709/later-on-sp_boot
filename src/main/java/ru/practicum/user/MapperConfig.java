@@ -4,9 +4,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class DtoMapperConfig {
+public class MapperConfig {
     @Bean
-    public DtoToUserMapper dtoMapper() {
-        return new DtoToUserMapper();
+    public UserMapper dtoMapper() {
+        return new UserMapper();
     }
 }
